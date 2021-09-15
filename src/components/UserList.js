@@ -1,25 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
+import User from "./User";
+
 
 function UserList(props) {
-  //contains users array
-  const users = props.data;
-
   return (
     <div>
-      {
-        //loops through the users array and display some JSX for each item
-        users.map((user, index) => {
-          return (
+      {props.users.map((user) => {
+        //renders the User component for each user in the users array
+        return (
+          <User
+            user={user}
+            key={user.id}
+            deleteUser={props.deleteUser}
             
-            <div key={index}>
-              <h1>{user.name}</h1>
-              <h2>{user.email}</h2>
-              <h3>{user.gen}</h3>
-            </div>
-          );
-        })
-      }
+          />
+        );
+      })}
     </div>
   );
 }
+
 export default UserList;

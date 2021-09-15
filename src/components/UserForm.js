@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { v4 as uuid } from "uuid";
 
 function UserForm(props) {
   const [name, setName] = useState("");
@@ -8,23 +9,27 @@ function UserForm(props) {
   function handleSubmit(e) {
     e.preventDefault();
 
-    let user = {
-      name: name,
-      email: email,
-      gen: gen,
-    };
+    if (email && name && gen) {
+      let user = {
+        name: name,
+        email: email,
+        gen: gen,
+        id: uuid(),
+      };
 
-    props.addUser(user);
+      props.addUser(user);
 
-    setName("");
-    setEmail("");
-    setGen("");
+      setName("");
+      setEmail("");
+      setGen("");
+    }
   }
 
   return (
     <form onSubmit={(e) => handleSubmit(e)}>
-      <h1>Code train student form</h1>
+      <h1 className="heading">Code train student form</h1>
       <input
+        placeholder="FullName"
         type="text"
         name="fullname"
         value={name}
@@ -32,23 +37,22 @@ function UserForm(props) {
       />
 
       <input
-        type="email" 
-        name="email" 
+        placeholder="Email"
+        type="email"
+        name="email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
       />
-        
-        
+
       <input
+        placeholder="Gen"
         type="text"
         name="gen"
         value={gen}
         onChange={(e) => setGen(e.target.value)}
       />
-        
 
-       
-      <input type="submit" />
+      <input className="but" type="submit" />
     </form>
   );
 }

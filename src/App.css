@@ -36,3 +36,31 @@
     transform: rotate(360deg);
   }
 }
+body {
+  background-color: rgba(28, 28, 145, 0.548);
+display: flex;
+
+justify-content: center;
+align-content: center;
+
+}
+
+input {
+  display: flex;
+  flex-direction: row;
+  width: 300px;
+  margin: 13px;
+  border-radius: 8px;
+}
+
+.but {
+  background-color: rgb(143, 172, 36);
+  width: 60px;
+  border : black;
+  padding: 10px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+
+

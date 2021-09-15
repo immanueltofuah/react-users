@@ -19,9 +19,8 @@ function User(props) {
     <div>
       <h1>{user.name}</h1>
       <h3>{user.email}</h3>
-      <Button variant="primary" onClick={() => toggleModal()}>
-        Edit
-      </Button>
+      <h3>{user.gen}</h3>
+      
       <Button variant="danger" onClick={() => props.deleteUser(user.id)}>
         Delete
       </Button>
