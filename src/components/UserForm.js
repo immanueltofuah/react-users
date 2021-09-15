@@ -23,6 +23,7 @@ function UserForm(props) {
 
   return (
     <form onSubmit={(e) => handleSubmit(e)}>
+      <h1>Code train student form</h1>
       <input
         type="text"
         name="fullname"
