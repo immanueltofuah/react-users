@@ -1,4 +1,4 @@
-initialState= {
+const initialState= {
 users:[
     {name:"herbert",
     email:"himself@gmail.com",
@@ -6,7 +6,7 @@ users:[
 
     {name:"herbert",
     email:"himself@gmail.com",
-    gen: "20"}
+    gen: "20"},
 ]
 
 }
