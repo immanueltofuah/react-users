@@ -16,3 +16,5 @@ return state
 
 
 };
+
+export default usersReducer;
