@@ -13,6 +13,7 @@ function UserList(props) {
             user={user}
             key={user.id}
             deleteUser={props.deleteUser}
+            editUser={props.editUser}
             
           />
         );
