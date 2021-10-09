@@ -60,7 +60,7 @@ export default function EditUserForm(props) {
           type="gen"
           placeholder="Enter gen"
           value={email}
-          onChange={(e) => handleEmailChange(e)}
+          onChange={(e) => handleGenChange(e)}
         />
         <Button onClick={() => handleSubmit()}>Save</Button>
       </Form.Group>
