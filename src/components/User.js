@@ -20,7 +20,9 @@ function User(props) {
       <h1>{user.name}</h1>
       <h3>{user.email}</h3>
       <h3>{user.gen}</h3>
-      
+      <Button variant="primary" onClick={() => toggleModal()}>
+        Edit
+      </Button>
       <Button variant="danger" onClick={() => props.deleteUser(user.id)}>
         Delete
       </Button>
