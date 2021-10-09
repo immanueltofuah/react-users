@@ -14,6 +14,10 @@ export default function EditUserForm(props) {
     setEmail(e.target.value);
   };
 
+  const handleGenChange = (e) => {
+    setGen(e.target.value);
+  };
+
   function handleSubmit() {
     //combines the new user details
     let editedUser = {
