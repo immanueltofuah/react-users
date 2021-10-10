@@ -59,7 +59,7 @@ export default function EditUserForm(props) {
         <Form.Control
           type="gen"
           placeholder="Enter gen"
-          value={email}
+          value={gen}
           onChange={(e) => handleGenChange(e)}
         />
         <Button onClick={() => handleSubmit()}>Save</Button>
