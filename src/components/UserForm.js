@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { v4 as uuid } from "uuid";
+import { connect } from "react-redux";
 
 function UserForm(props) {
   const [name, setName] = useState("");
