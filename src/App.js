@@ -6,9 +6,7 @@ import UserList from "./components/UserList";
 function App() {
   const [users, setUsers] = useState([]);
 
-  function addUser(user) {
-    setUsers([...users, user]);
-  }
+  
 
   //function to edit user
   function editUser(newDetails, userId) {
@@ -39,7 +37,8 @@ function App() {
 
   return (
     <div>
-      <UserForm addUser={addUser} />
+      <UserForm 
+      />
       <UserList users={users} deleteUser={deleteUser} editUser={editUser}  />
     </div>
   );
