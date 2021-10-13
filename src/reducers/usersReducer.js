@@ -10,10 +10,11 @@ const usersReducer =(state = initialState, action)=>{
         case "ADD_USER":
             console.log(action.payload);
             //return { ...state, users: [..state.users, action.payload]}
-    }
+            default:
+                return state;
+        }
 
-    
-        return state;
+        
 
 };
 
