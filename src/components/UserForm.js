@@ -18,7 +18,7 @@ function UserForm(props) {
         id: uuid(),
       };
 
-      props.addUser(user);
+      props.addNewUser(user);
 
       setName("");
       setEmail("");
@@ -57,4 +57,8 @@ function UserForm(props) {
     </form>
   );
 }
+
+const mapDispatchToProps = {
+  addNewUser: addUser,
+};
 export default UserForm;
