@@ -6,8 +6,14 @@ users:[
 }
 
 const usersReducer =(state = initialState, action)=>{
-return state
+    switch (action.type) {
+        case "ADD_USER":
+            console.log(action.payload);
+            //return { ...state, users: [..state.users, action.payload]}
+    }
 
+    
+        return state;
 
 };
 
