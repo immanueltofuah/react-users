@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { v4 as uuid } from "uuid";
 import { connect } from "react-redux";
+import { addUser} from "./actions/userActions";
 
 function UserForm(props) {
   const [name, setName] = useState("");
@@ -61,4 +62,4 @@ function UserForm(props) {
 const mapDispatchToProps = {
   addNewUser: addUser,
 };
-export default UserForm;
+export default connect (null, mapDispatchToProps)(UserForm);
