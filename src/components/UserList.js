@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import User from "./User";
 import { Modal, Button } from "react-bootstrap";
+import { connect } from "react-redux";
 
 
 function UserList(props) {
   return (
     <div>
+
       {props.users.map((user) => {
         //renders the User component for each user in the users array
         return (
@@ -22,4 +24,10 @@ function UserList(props) {
   );
 }
 
-export default UserList;
+const mapStateToProps = (state) =>{
+  return{
+    users: state.users,
+  }
+}
+
+export default connect(mapStateToProps) (UserList);
