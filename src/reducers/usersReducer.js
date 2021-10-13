@@ -1,12 +1,6 @@
 const initialState= {
 users:[
-    {name:"herbert",
-    email:"himself@gmail.com",
-    gen: "20"},
-
-    {name:"herbert",
-    email:"himself@gmail.com",
-    gen: "20"},
+    
 ]
 
 }
