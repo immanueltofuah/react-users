@@ -16,13 +16,20 @@ const usersReducer =(state = initialState, action)=>{
                    (user) => user.id !== action.payload
                );
                return { ...state, users: filteredUsers }; 
+            
+            case "EDIT_USER":
+                const updatedUsers = state.users.map((user) => {
+                    if (user.id === action.payload.userId) {
+                        return action.payload.updatedUser;
+                    }
+                    return user;
+                });
+                return { ...state, users: updatedUsers };
            
            default:
                 return state;
                
-        }
-
-        
+        }   
 
 };
 
