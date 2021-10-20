@@ -3,7 +3,7 @@ import { Form, Button } from "react-bootstrap";
 import { connect } from "react-redux";
 import { editUser } from "./actions/userActions";
 
- function EditUserForm(props) {
+function EditUserForm(props) {
   const [name, setName] = useState(props.user.name);
   const [email, setEmail] = useState(props.user.email);
   const [gen, setGen] = useState(props.user.gen);
@@ -30,7 +30,7 @@ import { editUser } from "./actions/userActions";
     };
 
     //calls the edit User function and closes the modal
-    props.editUser(editedUser, props.user.id);
+    props.editUser(props.user.id, editedUser);
     props.toggleModal();
   }
 
@@ -54,9 +54,9 @@ import { editUser } from "./actions/userActions";
           value={email}
           onChange={(e) => handleEmailChange(e)}
         />
-        </Form.Group>
+      </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formBasicPassword">
+      <Form.Group className="mb-3" controlId="formBasicPassword">
         <Form.Label>Gen</Form.Label>
         <Form.Control
           type="gen"
@@ -71,7 +71,7 @@ import { editUser } from "./actions/userActions";
 }
 
 const mapDispatchToProps = {
-  editUser
-}
+  editUser,
+};
 
-export default connect (null, mapDispatchToProps)(EditUserForm)
+export default connect(null, mapDispatchToProps)(EditUserForm);

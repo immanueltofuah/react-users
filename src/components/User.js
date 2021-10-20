@@ -38,7 +38,7 @@ function User(props) {
           {/*Component to edit user*/}
           <EditUserForm
             user={user}
-            editUser={props.editUser}
+            
             toggleModal={toggleModal}
           />
         </Modal.Body>

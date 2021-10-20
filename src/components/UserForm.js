@@ -54,7 +54,7 @@ function UserForm(props) {
         onChange={(e) => setGen(e.target.value)}
       />
 
-      <input className="but" type="submit" />
+      <input className="but" type="submit" /> 
     </form>
   );
 }
