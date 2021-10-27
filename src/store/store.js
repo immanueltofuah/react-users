@@ -1,4 +1,4 @@
-import {createStore, applyMiddleware} from "redux";
+import {createStore, applyMiddleware, compose} from "redux";
 import firebase from "../Firebase/config";
 import { getFirebase, reduxReactFirebase } from "react-redux-firebase";
 import { getFirestore, reduxFirestore } from "redux-firestore";
@@ -7,7 +7,12 @@ import usersReducer from "../reducers/usersReducer";
 
 
 
-const store = createStore(usersReducer);
+const store = createStore(usersReducer, compose(
+    applyMiddleware(thunk.withExtraArgument({getFirebase, getFirestore })),
+    reduxReactFirebase(firebase),
+    reduxFirestore(firebase)
+    )
+    );
 
 
 export default store;
