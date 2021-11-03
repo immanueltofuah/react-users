@@ -8,7 +8,7 @@ function UserList(props) {
     <div>
 
       {props.users.map((user) => {
-        //renders the User component for each user in the users array
+        //renders the User component for each user in the users arrays
         return (
           <User
             user={user}
