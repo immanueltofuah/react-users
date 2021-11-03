@@ -6,10 +6,10 @@ export const addUser = (user) => {
 			.collection("users")
 			.add(user)
 			.then(() => {
-				dispatch({
-					type: "ADD_USER",
-					payload: user,
-				});
+				// dispatch({
+				// 	type: "ADD_USER",
+				// 	payload: user,
+				// });
 			});
 	};
 
