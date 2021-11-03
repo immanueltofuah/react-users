@@ -1,9 +1,9 @@
 const initialState= {
 users:[
-    
-]
 
-}
+],
+
+};
 
 const usersReducer =(state = initialState, action)=>{
     switch (action.type) {
@@ -25,6 +25,8 @@ const usersReducer =(state = initialState, action)=>{
                     return user;
                 });
                 return { ...state, users: updatedUsers };
+                case "SET_ALL_USERS":
+                    return { users: action.payload };
            
            default:
                 return state;
