@@ -7,7 +7,7 @@ export const addUser = (user) => {
       .add(user)
       .then(() => {});
   };
-
+  console.log(user);
   // console.log("addUser", user);
   // //user.id = Math.random().toString();
 };
@@ -29,7 +29,11 @@ export const deleteUser = (userId) => {
 
 export const editUser = (userId, updatedUser) => {
   return (dispatch, state, { getFirestore }) => {
-    getFirestore();
+    getFirestore()
+		.collection("users")
+		.doc(userId)
+		.update( updatedUser )
+		.then(() => {});
   };
   // return {
   // 	type: "EDIT_USER",
@@ -45,7 +49,7 @@ export const getAllUsers = () => {
         (snapshot) => {
           let users = [];
           snapshot.forEach((doc) => {
-            users.push(doc.data());
+            users.push({...doc.data(), id: doc.id});
           });
           console.log(users);
           dispatch({ type: "SET_ALL_USERS", payload: users });
