@@ -4,7 +4,7 @@ export const addUser = (user) => {
   return (dispatch, state, { getFirestore }) => {
     getFirestore()
       .collection("users")
-      .add(user)
+      .add({...user, timestamp: getFirestore().FieldValue.serverTimestamp() })
       .then(() => {});
   };
   console.log(user);
@@ -45,6 +45,7 @@ export const getAllUsers = () => {
   return (dispatch, state, { getFirestore }) => {
     getFirestore()
       .collection("users")
+	  .orderBy("timestamp", "desc")
       .onSnapshot(
         (snapshot) => {
           let users = [];
