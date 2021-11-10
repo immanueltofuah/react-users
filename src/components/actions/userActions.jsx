@@ -18,10 +18,18 @@ export const addUser = (user) => {
 };
 
 export const deleteUser = (userId) => {
-	return {
-		type: "DELETE_USER",
-		payload: userId,
-	};
+	return (dispatch, state, { getFirestore }) => {
+		getFirestore()
+			.collection("users")
+			.doc(userId)
+			.delete()
+			.then(() => {});
+	};		
+
+// 	return {
+// 		type: "DELETE_USER",
+// 		payload: userId,
+// 	};
 };
 
 export const editUser = (userId, updatedUser) => {
