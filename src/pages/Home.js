@@ -6,23 +6,20 @@ import { signOut } from "../actions/authActions";
 import { useDispatch, connect } from "react-redux";
 
 function Home(props) {
-    return (
-      <Container fluid style={{ marginTop: "5 rem" }}>
-        <Row>
-          <button onClick={() => props.signOut()}>Sign out</button>
-          <Col md="5">
-            <UserForm />
-          </Col>
+    useEffect(() => {
+		props.getAllUsers();
+	}, []);
+ 
+  return (
+    <div>
+      <UserForm 
+      />
+      <UserList/>
+    </div>
+  );
+}
+const mapDispatchToProps = {
+  getAllUsers: getAllUsers,
+};
   
-          <Col md="5 ">
-            <UserList />
-          </Col>
-        </Row>
-      </Container>
-    );
-  }
-  const mapDispatch = {
-    signOut,
-  };
-  
-//   export default connect(null, mapDispatch)(Home);
+  export default connect(null, mapDispatchToProps)(Home);
