@@ -4,10 +4,10 @@ import UserForm from "./components/UserForm";
 import UserList from "./components/UserList";
 import { getAllUsers } from "./components/actions/userActions";
 import { connect } from "react-redux";
-import Home from "./pages/Login";
-import Login from "./pages/Register";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
 import ProtectedRoute from "./components/ProtectedRoute";
-
+import { BrowserRouter, Route } from "react-router-dom";
 
 function App(){  
  return (
