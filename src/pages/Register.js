@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import {
   createUserWithEmailAndPassword,
   signInWithGoogle,
-} from "../actions/authActions";
+} from "../components/actions/authActions";
 
 function Register(props) {
   if (!props.auth.isLoaded) return null;
@@ -46,4 +46,4 @@ const mapState = (state) => {
   };
 };
 
-// export default connect(mapState, mapDispatch)(Register);
+export default connect(mapState, mapDispatch)(Register);

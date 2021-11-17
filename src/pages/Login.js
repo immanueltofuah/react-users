@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { login, signInWithGoogle } from "../actions/authActions";
+import { login, signInWithGoogle } from "../components/actions/authActions";
 
 function Login(props) {
   if (!props.auth.isLoaded) return null;
@@ -43,4 +43,4 @@ const mapDispatch = {
   signInWithGoogle,
 };
 
-// export default connect(mapState, mapDispatch)(Login);
+export default connect(mapState, mapDispatch)(Login);
