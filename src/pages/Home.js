@@ -1,9 +1,10 @@
-import React from "react";
+import React,{useEffect} from "react";
 import UserForm from "../components/UserForm";
-import { Container, Row, Col } from "react-bootstrap";
 import UserList from "../components/UserList";
 import { signOut } from "../components/actions/authActions";
 import { useDispatch, connect } from "react-redux";
+import { reactReduxFirebase } from "react-redux-firebase";
+import { getAllUsers } from "../components/actions/userActions";
 
 function Home(props) {
     useEffect(() => {
