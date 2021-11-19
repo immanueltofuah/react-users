@@ -13,6 +13,7 @@ function Home(props) {
  
   return (
     <div>
+        <button onClick={() => props.signOut()}>Sign out</button>
       <UserForm 
       />
       <UserList/>
@@ -20,7 +21,7 @@ function Home(props) {
   );
 }
 const mapDispatchToProps = {
-  getAllUsers: getAllUsers,
+  getAllUsers: getAllUsers, signOut
 };
   
   export default connect(null, mapDispatchToProps)(Home);
